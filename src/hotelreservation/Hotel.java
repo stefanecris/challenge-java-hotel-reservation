@@ -4,12 +4,14 @@ public class Hotel {
     private String name;
     private int rating;
     private float weekdayRate, weekendRate;
+    private float total;
 
     public Hotel(String name, int rating, float weekdayRate, float weekendRate) {
         this.name = name;
         this.rating = rating;
         this.weekdayRate = weekdayRate;
         this.weekendRate = weekendRate;
+        this.total = 0;
     }
 
     public String getName() {
@@ -42,6 +44,10 @@ public class Hotel {
 
     public void setWeekendRate(float weekendRate) {
         this.weekendRate = weekendRate;
+    }
+
+    public float getTotal() {
+        return total;
     }
     
 }
