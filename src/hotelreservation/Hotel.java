@@ -65,7 +65,7 @@ public class Hotel {
     
     }
     
-    public int getWeekdayNumber(String date){
+    private int getWeekdayNumber(String date){
         String dayOfTheWeek = getDayOfTheWeek(date);
         String[] week = {"sun", "mon", "tues", "wed", "thur", "fri", "sat"};
         int weekdayNumber = -1, i;
@@ -79,7 +79,7 @@ public class Hotel {
         return weekdayNumber;
     }
 
-    public String getDayOfTheWeek(String date){
+    private String getDayOfTheWeek(String date){
         int begin = date.indexOf('(') + 1, end = date.indexOf(')');
         return date.substring(begin, end);
     }
