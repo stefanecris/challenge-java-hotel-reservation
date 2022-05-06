@@ -23,6 +23,10 @@ public class HotelReservation {
         
         calculateTotalForEachHotel(args);
         
+        String cheapestHotel = cheapestHotel();
+        
+        System.out.println(cheapestHotel);
+        
     }
     
     public static void calculateTotalForEachHotel(String[] args){
@@ -31,4 +35,26 @@ public class HotelReservation {
         ridgewoodHotel.calcTotal(args);
     }
         
+    public static String cheapestHotel(){
+        Hotel cheapest = lakewoodHotel;
+        
+        if(bridgewoodHotel.getTotal() < cheapest.getTotal()){
+            cheapest = bridgewoodHotel;
+        }else if(bridgewoodHotel.getTotal() == cheapest.getTotal()){
+            if(bridgewoodHotel.getRating() > cheapest.getRating()){
+                cheapest = bridgewoodHotel; 
+            }
+        }
+        
+        if(ridgewoodHotel.getTotal() < cheapest.getTotal()){
+            cheapest = ridgewoodHotel;
+        }else if(ridgewoodHotel.getTotal() == cheapest.getTotal()){
+            if(ridgewoodHotel.getRating() > cheapest.getRating()){
+                cheapest = ridgewoodHotel; 
+            }
+        }
+        
+        return cheapest.getName();
+    }
+    
 }
