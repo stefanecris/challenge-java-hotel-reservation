@@ -50,4 +50,23 @@ public class Hotel {
         return total;
     }
     
+    public int getWeekdayNumber(String date){
+        String dayOfTheWeek = getDayOfTheWeek(date);
+        String[] week = {"sun", "mon", "tues", "wed", "thur", "fri", "sat"};
+        int weekdayNumber = -1, i;
+        
+        for(i = 0; i <= 6; i++){
+            if(week[i].equals(dayOfTheWeek)){
+                weekdayNumber = i;
+            }
+        }
+        
+        return weekdayNumber;
+    }
+
+    public String getDayOfTheWeek(String date){
+        int begin = date.indexOf('(') + 1, end = date.indexOf(')');
+        return date.substring(begin, end);
+    }
+    
 }
