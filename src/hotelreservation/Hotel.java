@@ -50,6 +50,21 @@ public class Hotel {
         return total;
     }
     
+    public void calcTotal(String[] args){
+        
+        for(int i = 1; i < args.length; i++){
+            String date = args[i];
+            int weekdayNumber = getWeekdayNumber(date);
+            
+            if(weekdayNumber >= 1 && weekdayNumber <= 5){
+                total += weekdayRate;
+            }else{
+                total += weekendRate;
+            }
+        }
+    
+    }
+    
     public int getWeekdayNumber(String date){
         String dayOfTheWeek = getDayOfTheWeek(date);
         String[] week = {"sun", "mon", "tues", "wed", "thur", "fri", "sat"};
