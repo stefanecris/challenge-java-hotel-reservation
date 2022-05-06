@@ -21,6 +21,14 @@ public class HotelReservation {
             ridgewoodHotel = new Hotel("Ridgewood", 5, 100, 40);
         }
         
+        calculateTotalForEachHotel(args);
+        
     }
     
+    public static void calculateTotalForEachHotel(String[] args){
+        lakewoodHotel.calcTotal(args);
+        bridgewoodHotel.calcTotal(args);
+        ridgewoodHotel.calcTotal(args);
+    }
+        
 }
